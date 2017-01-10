@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2016/12/21 16:28:20 by kmurray          ###   ########.fr        #
+#    Updated: 2017/01/10 14:03:04 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,13 +40,17 @@ SRC_NAME = ft_validate_tetros.c\
 		   ft_shove_top_left.c\
 		   ft_make_map.c\
 		   ft_fillit.c\
-		   fillit.c
+		   ft_vertical_fit.c\
+		   ft_back_track.c\
+		   ft_does_it_fit.c\
+		   ft_place_tetro.c\
+		   main.c
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C $(LFT_PATH)
-	@$(CC) -o $(NAME) $(OBJ) -lm -L $(LFT_PATH) -lft
+	@$(CC) -o $(NAME) $(OBJ) -L$(LFT_PATH) -lft -fsanitize=address
 
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
