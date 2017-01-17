@@ -6,13 +6,13 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 02:01:08 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:36:49 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/03 21:37:38 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static	int count_words(char const *str)
+static	int		count_words(char const *str)
 {
 	int		i;
 	int		count;
@@ -28,7 +28,7 @@ static	int count_words(char const *str)
 	return (count);
 }
 
-static	int	wordlen(char const *str, size_t i)
+static	int		wordlen(char const *str, size_t i)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ static	int	wordlen(char const *str, size_t i)
 	{
 		count++;
 		if (str[i] == '\n' && (str[i + 1] == '\n' || !str[i + 1]))
-			break;
+			break ;
 		i++;
 	}
 	return (count);

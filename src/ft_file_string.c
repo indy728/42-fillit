@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 23:08:57 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:33:34 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/03 21:30:18 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_file_string(char const *path, int size)
 	in = (char *)malloc(sizeof(char) * (size + 1));
 	if (!in)
 		return (NULL);
- 	in[size] = '\0';
+	in[size] = '\0';
 	size = 0;
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
@@ -32,7 +32,7 @@ char	*ft_file_string(char const *path, int size)
 		in[size] = buf[0];
 		size++;
 	}
-	if(close(fd) == -1)
+	if (close(fd) == -1)
 		return (NULL);
 	return (in);
 }

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 01:38:20 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:37:06 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/03 21:28:31 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_validate_size(int file_size)
 	if ((file_size != 20 && (file_size - 20) % 21 != 0) || file_size < 20)
 	{
 		ft_putstr("error\n");
-		exit (0);
+		exit(0);
 	}
 }

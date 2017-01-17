@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 01:52:53 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:39:32 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/03 21:28:17 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 static	void	exit_zero(void)
 {
-	ft_putstr("error\n");
-	exit (0);
+	ft_putendl("error");
+	exit(0);
 }
 
-
-void	ft_validate_tetros(char **str)
+void			ft_validate_tetros(char **str)
 {
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	
+
 	i = 0;
 	while (str[i] != NULL)
 	{

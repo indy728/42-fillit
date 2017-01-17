@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 00:17:38 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:39:58 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/03 21:29:31 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	tetro_prev(char const *tetro, int i)
 		return (1);
 	return (0);
 }
+
 static int	tetro_prev_line(char const *tetro, int i)
 {
 	if (tetro[i - 5] == '#')
@@ -39,7 +40,7 @@ static int	tetro_prev_line(char const *tetro, int i)
 	return (0);
 }
 
-int	ft_is_tetro(char const *tetro)
+int			ft_is_tetro(char const *tetro)
 {
 	int	count;
 	int	i;

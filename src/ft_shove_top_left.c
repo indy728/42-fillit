@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 03:36:26 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:36:37 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/03 21:35:04 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static	int	find_min_y(char *tetro)
 	return (y);
 }
 
-void	ft_shove_top_left(char **tetro)
+void		ft_shove_top_left(char **tetro)
 {
 	int x;
 	int y;
@@ -59,10 +59,10 @@ void	ft_shove_top_left(char **tetro)
 		j = 0;
 		while (tetro[i][j])
 		{
-			if(tetro[i][j] == '#')
+			if (tetro[i][j] == '#')
 			{
-			tetro[i][j] = '.';
-			tetro[i][j - (y * 5 + x)] = '#';
+				tetro[i][j] = '.';
+				tetro[i][j - (y * 5 + x)] = '#';
 			}
 			j++;
 		}
