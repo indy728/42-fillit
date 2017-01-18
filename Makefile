@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2017/01/10 14:59:18 by kmurray          ###   ########.fr        #
+#    Updated: 2017/01/18 13:39:24 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRC_NAME = ft_validate_tetros.c\
 		   ft_back_track.c\
 		   ft_does_it_fit.c\
 		   ft_place_tetro.c\
+		   ft_putsqr.c\
 		   main.c
 
 all: $(NAME)

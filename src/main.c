@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 09:52:10 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/03 21:48:38 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:32:06 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	min_size(char **tetros)
 	i = 0;
 	size = 2;
 	while (tetros[i])
-		i++;
+		++i;
 	while (4 * i > size * size)
-		size++;
+		++size;
 	return (size);
 }
 
@@ -32,6 +32,11 @@ static char	*read_and_get_string(char const *file)
 	int		fsize;
 
 	fsize = ft_file_size(file);
+	if (fsize == -1)
+	{
+		ft_putendl("error");
+		exit(1);
+	}
 	ft_validate_size(fsize);
 	in = ft_file_string(file, fsize);
 	if (!in)
@@ -75,7 +80,7 @@ int			main(int ac, char **av)
 		free(map);
 		i = 0;
 		while (tetros[i])
-			i++;
+			++i;
 		while (--i >= 0)
 			free(tetros[i]);
 		free(tetros);

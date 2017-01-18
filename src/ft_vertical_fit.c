@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:24:23 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/28 17:36:06 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:31:22 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	ft_vertical_fit(char *tetro, int n, int size)
 	while (k < 4)
 	{
 		if (tetro[i] != '.' && tetro[i] != '\n')
-			k++;
-		i++;
+			++k;
+		++i;
 	}
 	if ((i - 1) / (5) + n / (size + 1) + 1 > size)
 		return (0);

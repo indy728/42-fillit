@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 00:17:38 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/03 21:29:31 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:15:25 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,17 @@ int			ft_is_tetro(char const *tetro)
 	while (tetro[i])
 	{
 		if (tetro[i] == '#' && i == 0)
-			count = count + tetro_next(tetro, i) + tetro_next_line(tetro, i);
+			count += tetro_next(tetro, i) + tetro_next_line(tetro, i);
 		else if (tetro[i] == '#' && i < 5)
-			count = count + tetro_next(tetro, i) + tetro_next_line(tetro, i)
+			count += tetro_next(tetro, i) + tetro_next_line(tetro, i)
 				+ tetro_prev(tetro, i);
 		else if (tetro[i] == '#' && i == 18)
-			count = count + tetro_prev(tetro, i) + tetro_prev_line(tetro, i);
+			count += tetro_prev(tetro, i) + tetro_prev_line(tetro, i);
 		else if (tetro[i] == '#' && i > 14)
-			count = count + tetro_next(tetro, i) + tetro_prev_line(tetro, i)
+			count += tetro_next(tetro, i) + tetro_prev_line(tetro, i)
 				+ tetro_prev(tetro, i);
 		else if (tetro[i] == '#')
-			count = count + tetro_next(tetro, i) + tetro_prev_line(tetro, i)
+			count += tetro_next(tetro, i) + tetro_prev_line(tetro, i)
 				+ tetro_prev(tetro, i) + tetro_next_line(tetro, i);
 		i++;
 	}

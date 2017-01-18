@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 01:57:16 by kmurray           #+#    #+#             */
-/*   Updated: 2016/12/21 14:34:03 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:27:54 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_make_map(int size)
 	char	*map;
 	int		i;
 
-	map = (char *)malloc(size * (size + 1) + 1);
+	if (!(map = (char *)malloc(size * (size + 1) + 1)))
+		return (NULL);
 	map[size * (size + 1)] = '\0';
 	i = 0;
 	while (i < size * (size + 1))

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 23:08:57 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/03 21:30:18 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:27:47 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ char	*ft_file_string(char const *path, int size)
 	char	*in;
 	char	buf[BUF_SIZE];
 
-	in = (char *)malloc(sizeof(char) * (size + 1));
-	if (!in)
+	if (!(in = (char *)malloc(size + 1)))
 		return (NULL);
 	in[size] = '\0';
 	size = 0;
@@ -28,10 +27,7 @@ char	*ft_file_string(char const *path, int size)
 	if (fd == -1)
 		return (NULL);
 	while ((bytes_read = read(fd, buf, BUF_SIZE)))
-	{
-		in[size] = buf[0];
-		size++;
-	}
+		in[size++] = buf[0];
 	if (close(fd) == -1)
 		return (NULL);
 	return (in);

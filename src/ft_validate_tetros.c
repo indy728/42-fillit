@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 01:52:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/03 21:28:17 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:31:01 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void			ft_validate_tetros(char **str)
 			if ((j + 1) % 5 != 0 && str[i][j] != '.' && str[i][j] != '#')
 				exit_zero();
 			if (str[i][j] == '#')
-				k++;
-			j++;
+				++k;
+			++j;
 		}
 		if (k != 4 || !ft_is_tetro(str[i]))
 			exit_zero();
-		i++;
+		++i;
 	}
 }

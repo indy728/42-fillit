@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 19:15:17 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/11 19:09:27 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 14:13:24 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	int	map_size(char *map)
 
 	size = 0;
 	while (map[size] != '\n')
-		size++;
+		++size;
 	return (size);
 }
 
@@ -27,6 +27,8 @@ int			available_space(char *map, char *tetro, int i, int size)
 	int gaps;
 
 	gaps = 0;
+	if (!tetro)
+		return (0);
 	while (!ft_isalpha(tetro[gaps]))
 		++gaps;
 	while (map[i + gaps] != '.' && ft_vertical_fit(tetro, i, size))
@@ -59,13 +61,15 @@ char		*ft_fillit(char *map, char **tetros, int i, int j)
 				i = ft_back_track(map, tetros[j], j + 'A');
 				i = available_space(map, tetros[j], ++i, size);
 			}
+		ft_putsqr(map);
 		}
 		else if (!ft_does_it_fit(map, tetros[j], i, size))
 			i = available_space(map, tetros[j], ++i, size);
 		else
 		{
 			ft_place_tetro(map, tetros[j], i, size);
-			i = available_space(map, tetros[j++], 0, size);
+			i = available_space(map, tetros[++j], 0, size);
+		ft_putsqr(map);
 		}
 	}
 	return (map);
