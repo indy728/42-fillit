@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 19:15:17 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/18 14:13:24 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/01/18 14:17:20 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,17 @@ char		*ft_fillit(char *map, char **tetros, int i, int j)
 		if (!ft_vertical_fit(tetros[j], i, size))
 		{
 			if (j == 0)
+			{
+		ft_putsqr(map);
 				map = new_map(map, &i, &size);
+		ft_putsqr(map);
+			}
 			else
 			{
 				--j;
 				i = ft_back_track(map, tetros[j], j + 'A');
 				i = available_space(map, tetros[j], ++i, size);
 			}
-		ft_putsqr(map);
 		}
 		else if (!ft_does_it_fit(map, tetros[j], i, size))
 			i = available_space(map, tetros[j], ++i, size);
